@@ -15,4 +15,4 @@ Conteúdo do curso
 
 Certificado de conclusão<br>
 
-<img align="center" alt="Dev-HTML" height="500em" src="https://github.com/FabioNunesDEV/Certificados/blob/main/F%C3%A1bio%20Vicente%20Nunes%20-%20Curso%20.NET_%20criando%20uma%20API%20Web%20com%20ASP.NET%20Core.png">
+<img align="center" alt="Dev-HTML" height="500em" src="https://github.com/FabioNunesDEV/Certificados/blob/main/Fábio%20Vicente%20Nunes%20-%20Curso%20.NET_%20desenvolvendo%20uma%20aplicação%20web%20com%20ASP.NET%20Core%20Blazor%20-%20Alura.png">
