@@ -7,12 +7,11 @@ Professor: André Bessa<br>
 
 Conteúdo do curso
 
--Aprenda a estruturar um projeto console para utilizar uma Web API.<br>
--Conheça a biblioteca ASP.NET Core e aplique ao projeto.<br>
--Desenvolva uma API Mínima para o projeto ScreenSound.<br>
--Aplique boas práticas no contexto de API Web para manter o projeto organizado e com melhor manutenção.<br>
--Aprenda a documentar sua API utilizando o Swagger.<br>
--Publique o banco e a API Web no Portal Azure.<br>
+- Construa uma aplicação Web do zero com C#
+- Utilize C# ao invés de Javascript no desenvolvimento de um sistema Web
+- Aprenda a utilizar bibliotecas para o desenvolvimento de interfaces
+- Saiba como consumir uma API utilizando C#
+- Entenda como publicar sua solução Web no Azure
 
 Certificado de conclusão<br>
 
