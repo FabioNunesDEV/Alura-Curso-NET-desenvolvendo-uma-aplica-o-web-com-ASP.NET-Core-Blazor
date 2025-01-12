@@ -1,4 +1,4 @@
-﻿@page "/artistas"
+﻿@page "/Artistas"
 
 @inject ArtistaAPI artistaAPI
 
@@ -6,10 +6,15 @@
 
 @if (artistas is not null)
 {
-    foreach (var artista in artistas)
-    {
-        <p>@artista.Nome</p>
-    }
+    <MudGrid>
+        @foreach (var artista in artistas)
+        {
+            <MudItem xs="3">
+                <CardArtista Artista="artista" />
+            </MudItem>
+        }
+    </MudGrid>
+
 }
 
 @code {

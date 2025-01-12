@@ -13,7 +13,12 @@ public static class GeneroExtesions
 
         app.MapGet("/Generos", ([FromServices] DAL<Genero> dal) =>
         {
-            return EntityListToResponseList(dal.Listar());
+            var generos = dal.Listar();
+            if (generos is null || !generos.Any())
+            {
+                return Results.NotFound("Nenhum gênero encontrado.");
+            }
+            return Results.Ok(EntityListToResponseList(generos));
         });
 
         app.MapGet("/Generos/{nome}", ([FromServices] DAL<Genero> dal, string nome) =>

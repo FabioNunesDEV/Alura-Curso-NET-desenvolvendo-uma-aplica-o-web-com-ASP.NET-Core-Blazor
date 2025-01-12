@@ -1,4 +1,6 @@
-﻿namespace ScreenSound.API.Data
+﻿using System.Linq.Expressions;
+
+namespace ScreenSound.API.Data
 {
     public class DAL<T> where T:class
     {
@@ -9,10 +11,16 @@
             this.context = context;
         }
 
-        public IEnumerable<T> Listar()
+        public IEnumerable<T> Listar(params Expression<Func<T, object>>[] includes)
         {
-            return context.Set<T>().ToList();
+            IQueryable<T> query = context.Set<T>();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+            return query.ToList();
         }
+
         public void Adicionar(T objeto)
         {
             context.Set<T>().Add(objeto);

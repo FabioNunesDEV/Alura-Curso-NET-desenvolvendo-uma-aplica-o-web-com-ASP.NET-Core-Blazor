@@ -3,5 +3,5 @@ public record ArtistaRequestEdit(
     int Id,
     string nome,
     string bio,
-    string fotoPerfil
+    string fotoPerfil = ""
     ) : ArtistaRequest(nome, bio);

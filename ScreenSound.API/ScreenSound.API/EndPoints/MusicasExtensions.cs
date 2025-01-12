@@ -4,9 +4,20 @@ public static class MusicasExtensions
     public static void AddEndPointsMusicas(this WebApplication app)
     {
         #region Endpoint Músicas
+        //app.MapGet("/Musicas", ([FromServices] DAL<Musica> dal) =>
+        //{
+        //    var musicaList = dal.Listar();
+        //    if (musicaList is null)
+        //    {
+        //        return Results.NotFound();
+        //    }
+        //    var musicaListResponse = EntityListToResponseList(musicaList);
+        //    return Results.Ok(musicaListResponse);
+        //});
+
         app.MapGet("/Musicas", ([FromServices] DAL<Musica> dal) =>
         {
-            var musicaList = dal.Listar();
+            var musicaList = dal.Listar(m => m.Artista, m => m.Generos);
             if (musicaList is null)
             {
                 return Results.NotFound();
@@ -14,6 +25,7 @@ public static class MusicasExtensions
             var musicaListResponse = EntityListToResponseList(musicaList);
             return Results.Ok(musicaListResponse);
         });
+
 
         app.MapGet("/Musicas/{nome}", ([FromServices] DAL<Musica> dal, string nome) =>
         {
@@ -82,8 +94,15 @@ public static class MusicasExtensions
         return musicaList.Select(a => EntityToResponse(a)).ToList();
     }
 
+    //private static MusicaResponse EntityToResponse(Musica musica)
+    //{
+    //    return new MusicaResponse(musica.Id, musica.Nome!, musica.Artista!.Id, musica.Artista!.Nome);
+    //}
+
     private static MusicaResponse EntityToResponse(Musica musica)
     {
-        return new MusicaResponse(musica.Id, musica.Nome!, musica.Artista!.Id, musica.Artista.Nome);
+        var generos = musica.Generos.Select(g => g.Nome).ToList();
+        return new MusicaResponse(musica.Id, musica.Nome!, musica.Artista!.Id, musica.Artista!.Nome, generos);
     }
+
 }

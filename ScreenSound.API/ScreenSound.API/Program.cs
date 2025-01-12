@@ -21,14 +21,10 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddTransient<DAL<Artista>>();
 builder.Services.AddTransient<DAL<Musica>>();
+builder.Services.AddTransient<DAL<Genero>>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
-//{
-//    options.SerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
-//});
 
 var app = builder.Build();
 
@@ -37,6 +33,7 @@ app.UseCors("AllowAll");
 
 app.AddEndPointsArtistas();
 app.AddEndPointsMusicas();
+app.AddEndPointGeneros();
 
 app.UseSwagger();
 app.UseSwaggerUI();
