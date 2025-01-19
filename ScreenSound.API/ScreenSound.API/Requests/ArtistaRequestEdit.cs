@@ -4,4 +4,4 @@ public record ArtistaRequestEdit(
     string nome,
     string bio,
     string fotoPerfil
-    ) : ArtistaRequest(nome, bio);
+    ) : ArtistaRequest(nome, bio, fotoPerfil);

@@ -9,8 +9,8 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddMudServices();
 
-builder.Services.AddTransient<ArtistaAPI>();
-builder.Services.AddTransient<MusicaAPI>();
+builder.Services.AddTransient<ArtistasAPI>();
+builder.Services.AddTransient<MusicasAPI>();
 
 builder.Services.AddHttpClient("API", client =>
 {
