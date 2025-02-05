@@ -1,6 +1,7 @@
 ﻿@page "/CadastrarArtista"
 @inject ArtistasAPI artistasAPI
 @inject NavigationManager navigationManager
+
 <MudPaper Class="px-8 pt-2 pb-4 mx-12 my-8" Justify="Justify.Center">
 
     <MudText Class="mt-8" Typo="Typo.h4">Cadastro do Artista</MudText>
@@ -20,6 +21,7 @@
                       Required="true"
                       RequiredError="Campo obrigatório." />
 
+
         <MudImage Class="mt-4" src="@fileImage" />
         <MudFileUpload T="IBrowserFile" Accept=".jpeg" FilesChanged="UploadFile" @ref="fileInput">
             <ButtonTemplate>
@@ -27,11 +29,12 @@
                            Variant="Variant.Filled"
                            Color="Color.Primary"
                            StartIcon="@Icons.Material.Filled.PhotoCamera"
-                           for="fileInput">
+                           for="@fileInput">
                     Foto de Perfil
                 </MudButton>
             </ButtonTemplate>
         </MudFileUpload>
+
 
         <div class="d-flex align-center justify-space-between mt-4">
             <MudButton Variant="Variant.Filled"
@@ -74,4 +77,4 @@
         fileImage = $"data:{format};base64,{imageUpload}";
         fotoPerfil = imageUpload;
     }
- }
+}
